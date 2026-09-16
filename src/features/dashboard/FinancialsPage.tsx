@@ -1,0 +1,4 @@
+import { Clock3 } from 'lucide-react'
+import { PageHeader } from '../../components/ui/PageHeader'
+
+export function FinancialsPage() { return <div className="mx-auto max-w-4xl"><PageHeader eyebrow="Planning" title="Financials" description="A broader view of your long-term financial health." /><div className="grid place-items-center rounded-2xl border border-dashed border-slate-300 bg-white px-6 py-24 text-center dark:border-slate-700 dark:bg-slate-900"><div className="grid size-14 place-items-center rounded-2xl bg-amber-100 text-amber-700 dark:bg-amber-300/10 dark:text-amber-300"><Clock3 size={25} /></div><h2 className="mt-5 font-display text-xl font-semibold text-slate-900 dark:text-white">Financial planning is on its way</h2><p className="mt-2 max-w-sm text-sm leading-6 text-slate-500">We are shaping a complete view of net worth, cash flow forecasts, and financial health. Check back soon.</p></div></div> }
