@@ -1,14 +1,7 @@
 import type { Earning, Expense, Investment, Loan, SummaryCard, User } from '../types'
+import profileFixture from './profile.json'
 
-export const user: User = {
-  id: 'usr-001',
-  name: 'Alex Morgan',
-  email: 'alex.morgan@example.com',
-  role: 'Personal account',
-  initials: 'AM',
-  location: 'Brooklyn, NY',
-  joined: 'March 2023',
-}
+export const user: User = profileFixture
 
 export const summaryCards: SummaryCard[] = [
   { label: 'Total earned', value: '$12,480.00', change: '+8.4%', positive: true, accent: 'mint' },

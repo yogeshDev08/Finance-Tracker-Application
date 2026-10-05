@@ -104,3 +104,9 @@ src/
 ├── App.tsx
 ├── main.tsx
 └── index.css                    # Tailwind directives
+
+## Profile Data (Temporary API)
+
+The profile page uses `src/constants/profile.json` as its static profile fixture. The async adapter in `src/services/profileApi.ts` simulates loading and saving, validates editable fields, and accepts an `AbortSignal` so requests are cancelled when the page is unmounted. The page reports loading, retry, validation, and save errors.
+
+Successful saves update the shared Redux auth user and persist it in browser storage. The dashboard, sidebar, and profile page read from that shared user, so name, email, location, and initials stay in sync. To connect a backend later, replace the implementations of `getProfile` and `updateProfile` in the service while keeping their typed return values and cancellation behavior.

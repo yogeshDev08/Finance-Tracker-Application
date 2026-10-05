@@ -25,6 +25,16 @@ const authSlice = createSlice({
       state.refreshToken = 'mock-refresh-token'
       localStorage.setItem('finance-auth', JSON.stringify(state))
     },
+    updateProfile: (state, action: PayloadAction<User>) => {
+      state.user = action.payload
+      if (state.isAuthenticated) {
+        try {
+          localStorage.setItem('finance-auth', JSON.stringify(state))
+        } catch {
+          // The in-memory profile remains usable when browser storage is unavailable.
+        }
+      }
+    },
     logout: (state) => {
       state.user = null
       state.isAuthenticated = false
@@ -35,5 +45,5 @@ const authSlice = createSlice({
   },
 })
 
-export const { login, logout } = authSlice.actions
+export const { login, logout, updateProfile } = authSlice.actions
 export default authSlice.reducer

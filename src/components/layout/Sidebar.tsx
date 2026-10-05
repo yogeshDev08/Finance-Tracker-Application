@@ -31,7 +31,7 @@ export function Sidebar({ mobile = false }: SidebarProps) {
     <motion.aside animate={{ width: sidebarWidth }} transition={{ duration: 0.22 }} className={`${mobile ? 'flex w-full' : 'hidden lg:flex'} min-h-screen shrink-0 flex-col border-r border-slate-200 bg-white px-3 py-5 dark:border-slate-800 dark:bg-slate-950`}>
       <div className="flex items-center gap-3 px-3 pb-9">
         <div className="grid size-10 shrink-0 place-items-center rounded-xl bg-slate-900 text-amber-300 dark:bg-amber-300 dark:text-slate-950"><CreditCard size={21} /></div>
-        {!collapsed && <span className="font-display text-lg font-semibold tracking-tight text-slate-900 dark:text-white">Ledgerly</span>}
+        {!collapsed && <span className="font-display text-lg font-semibold tracking-tight text-slate-900 dark:text-white">Finance</span>}
       </div>
       <nav className="flex-1 space-y-1">
         {navigation.map(({ label, to, icon: Icon }) => (
