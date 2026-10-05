@@ -2,6 +2,7 @@ import { useEffect, useRef, type PropsWithChildren } from 'react'
 import { Provider } from 'react-redux'
 import { store } from './store'
 import { useAppSelector } from './hooks'
+import { CurrencyProvider } from '../contexts/CurrencyContext'
 
 function ThemeController({ children }: Readonly<PropsWithChildren>) {
   const theme = useAppSelector((state) => state.ui.theme)
@@ -42,5 +43,5 @@ function ThemeController({ children }: Readonly<PropsWithChildren>) {
 }
 
 export function AppProviders({ children }: Readonly<PropsWithChildren>) {
-  return <Provider store={store}><ThemeController>{children}</ThemeController></Provider>
+  return <Provider store={store}><CurrencyProvider><ThemeController>{children}</ThemeController></CurrencyProvider></Provider>
 }

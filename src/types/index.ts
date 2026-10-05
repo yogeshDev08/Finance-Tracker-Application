@@ -8,6 +8,8 @@ export interface User {
   initials: string
   location: string
   joined: string
+  accountCreatedAt?: string
+  avatarUrl?: string
 }
 
 export interface SummaryCard {
